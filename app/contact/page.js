@@ -18,6 +18,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,8 +30,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission (e.g., send data to an API or email)
     console.log(formData);
+    setMessageSent(true);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    setTimeout(() => setMessageSent(false), 5000);
   };
 
   return (
@@ -44,10 +51,10 @@ const Contact = () => {
         </Typography>
 
         <Grid container spacing={4}>
-          {/* Contact Form */}
+          {/* Contact Form and Info */}
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 3 }} elevation={3}>
-              <Typography variant="h6" sx={{ mb: 2 }}>
+              <Typography variant="h5" sx={{ mb: 3 }}>
                 Get in Touch
               </Typography>
               <form onSubmit={handleSubmit}>
@@ -89,32 +96,27 @@ const Contact = () => {
                   Send Message
                 </Button>
               </form>
-            </Paper>
-          </Grid>
 
-          {/* Google Maps Embed */}
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 3 }} elevation={3}>
-              <Typography variant="h6" sx={{ mb: 2 }}>
-                Our Location on Google Maps
-              </Typography>
-              <Box sx={{ height: "400px", width: "100%" }}>
-                <iframe
-                  src="https://www.google.com/maps/embed/v1/place?q=37+Boulevard+du+Montparnasse,+75006+Paris,+France&key=AIzaSyDn6MCMWAR3ASwPWaXHW2g-liixrU5BPwA"
-                  width="100%"
-                  height="100%"
-                  style={{ border: "0" }}
-                  allowFullScreen=""
-                  loading="lazy"
-                ></iframe>
-              </Box>
-            </Paper>
-          </Grid>
+              {/* Confirmation message */}
+              {messageSent && (
+                <Box
+                  sx={{
+                    mt: 3,
+                    p: 2,
+                    backgroundColor: "#4caf50",
+                    color: "#fff",
+                    borderRadius: "4px",
+                    textAlign: "center",
+                  }}
+                >
+                  <Typography variant="h6">
+                    Your message has been sent!
+                  </Typography>
+                </Box>
+              )}
 
-          {/* Contact Information */}
-          <Grid item xs={12}>
-            <Paper sx={{ p: 3 }} elevation={3}>
-              <Typography variant="h6" sx={{ mb: 2 }}>
+              {/* Contact Information */}
+              <Typography variant="h5" sx={{ mb: 3, mt: 5 }}>
                 Our Contact Information
               </Typography>
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
@@ -132,6 +134,31 @@ const Contact = () => {
                 <Typography variant="body1">contact@bellavita.com</Typography>
               </Box>
             </Paper>
+          </Grid>
+
+          {/* Google Maps Embed */}
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                display: { xs: "block", md: "block" }, // Show map on both small and large devices
+                p: 3,
+                mt: { xs: 3, md: 0 }, // Add top margin on small devices
+              }}
+            >
+              <Typography variant="h5" sx={{ mb: 2 }}>
+                Our Location on Google Maps
+              </Typography>
+              <Box sx={{ height: "400px", width: "100%" }}>
+                <iframe
+                  src="https://www.google.com/maps/embed/v1/place?q=37+Boulevard+du+Montparnasse,+75006+Paris,+France&key=AIzaSyDn6MCMWAR3ASwPWaXHW2g-liixrU5BPwA"
+                  width="100%"
+                  height="100%"
+                  style={{ border: "0" }}
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Container>

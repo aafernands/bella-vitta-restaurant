@@ -1,8 +1,7 @@
 "use client";
 
-// components/ReservationForm.js
 import React, { useState } from 'react';
-import { TextField, Button, Box, Grid, Typography } from '@mui/material';
+import { TextField, Button, Box, Container, Grid, Typography, Paper, Snackbar, Alert } from '@mui/material';
 
 const ReservationForm = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +11,8 @@ const ReservationForm = () => {
     date: '',
     time: '',
   });
+
+  const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,97 +24,158 @@ const ReservationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Form Data:', formData); // Log form data to check
 
-    const response = await fetch('/api/reserve', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch('/api/reserve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await response.json();
-    if (data.success) {
-      alert('Reservation Confirmed!');
-    } else {
-      alert('Error: Could not make the reservation.');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+
+      if (data.success) {
+        setOpenSnackbar(true);
+      } else {
+        alert('Error: Could not make the reservation.');
+      }
+    } catch (error) {
+      console.error('Error during reservation:', error);
+      alert('An error occurred while making the reservation.');
     }
   };
 
+  const timeSlots = [
+    '12:00 PM',
+    '1:00 PM',
+    '2:00 PM',
+    '3:00 PM',
+    '4:00 PM',
+    '5:00 PM',
+  ];
+
   return (
-    <Box sx={{ width: '100%', maxWidth: 600, marginTop: '80px', padding: 3 }}>
-      <Typography variant="h4" gutterBottom>
-        Make a Reservation
-      </Typography>
-      <form onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Name"
-              variant="outlined"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Email"
-              variant="outlined"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Number of People"
-              variant="outlined"
-              name="people"
-              type="number"
-              value={formData.people}
-              onChange={handleChange}
-              required
-              inputProps={{ min: 1 }}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Date"
-              variant="outlined"
-              name="date"
-              type="date"
-              value={formData.date}
-              onChange={handleChange}
-              required
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Time"
-              variant="outlined"
-              name="time"
-              type="time"
-              value={formData.time}
-              onChange={handleChange}
-              required
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary" fullWidth>
-              Reserve
-            </Button>
+    <Box sx={{ backgroundColor: "#f5f5f5", py: 6 }}>
+      <Container maxWidth="lg">
+        <Typography
+          variant="h4"
+          sx={{ textAlign: "center", mb: 4, fontWeight: "bold" }}
+        >
+          Make a Reservation
+        </Typography>
+
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 3 }} elevation={3}>
+              <form onSubmit={handleSubmit}>
+                <Typography variant="h6" sx={{ mb: 2 }}>
+                  Reservation Form
+                </Typography>
+
+                <TextField
+                  label="Name"
+                  variant="outlined"
+                  fullWidth
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  sx={{ mb: 2 }}
+                  required
+                />
+                <TextField
+                  label="Email"
+                  variant="outlined"
+                  fullWidth
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  sx={{ mb: 2 }}
+                  required
+                />
+                <TextField
+                  label="Number of People"
+                  variant="outlined"
+                  fullWidth
+                  name="people"
+                  type="number"
+                  value={formData.people}
+                  onChange={handleChange}
+                  sx={{ mb: 2 }}
+                  required
+                  inputProps={{ min: 1 }}
+                />
+                <TextField
+                  label="Date"
+                  variant="outlined"
+                  fullWidth
+                  name="date"
+                  type="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  sx={{ mb: 2 }}
+                  required
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />
+                <TextField
+                  select
+                  label="Time"
+                  variant="outlined"
+                  fullWidth
+                  name="time"
+                  value={formData.time}
+                  onChange={handleChange}
+                  sx={{ mb: 2 }}
+                  required
+                  SelectProps={{
+                    native: true,
+                  }}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                >
+                  <option value="">Select a time</option>
+                  {timeSlots.map((time, index) => (
+                    <option key={index} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </TextField>
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  sx={{ mt: 2 }}
+                >
+                  Reserve
+                </Button>
+              </form>
+            </Paper>
           </Grid>
         </Grid>
-      </form>
+
+        {/* Snackbar for success message */}
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={6000}
+          onClose={() => setOpenSnackbar(false)}
+        >
+          <Alert onClose={() => setOpenSnackbar(false)} severity="success" sx={{ width: '100%' }}>
+            Registration complete! Please check your email for confirmation.
+          </Alert>
+        </Snackbar>
+      </Container>
     </Box>
   );
 };

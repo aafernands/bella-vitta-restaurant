@@ -42,11 +42,11 @@ export default function HeroSection() {
 				}}
 			>
 				<Typography
-					variant="h5"
+					variant="p"
 					color="inherit"
 					sx={{
 						fontFamily: "'Parisienne', cursive",
-						mb: 2,
+						fontSize: "1.8rem",
 					}}
 				>
 					Bienvenue

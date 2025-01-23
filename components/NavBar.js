@@ -19,9 +19,15 @@ export default function Navbar() {
 		setOpen(!open);
 	};
 
-	const handleNavigation = (path) => {
-		setOpen(false); // Close the drawer
-		router.push(path); // Navigate to the path
+	const handleNavigation = (path, openInNewTab = false) => {
+		if (openInNewTab) {
+			// Open the link in a new tab
+			window.open(path, "_blank", "noopener noreferrer");
+		} else {
+			// Navigate within the app
+			setOpen(false); // Close the drawer if it's open
+			router.push(path);
+		}
 	};
 
 	return (
@@ -54,12 +60,14 @@ export default function Navbar() {
 					{[
 						{ name: "Home", path: "/" },
 						{ name: "About", path: "/#about" },
-						{ name: "Menu", path: "./menu.png" },
+						{ name: "Menu", path: "./menu.png", openInNewTab: true },
 						{ name: "Contact", path: "/contact" },
 					].map((item) => (
 						<li key={item.name}>
 							<a
-								onClick={() => handleNavigation(item.path)}
+								onClick={() =>
+									handleNavigation(item.path, item.openInNewTab)
+								}
 								aria-label={item.name}
 								style={{ cursor: "pointer" }}
 							>
@@ -81,23 +89,21 @@ export default function Navbar() {
 						{[
 							{ name: "Home", path: "/" },
 							{ name: "About", path: "/#about" },
-							{ name: "Menu", path: "./menu.png" },
+							{ name: "Menu", path: "./menu.png", openInNewTab: true },
 							{ name: "Contact", path: "/contact" },
 						].map((item) => (
 							<li key={item.name}>
 								<a
 									onClick={() => {
-										if (!item.path.endsWith(".png")) {
+										if (item.openInNewTab) {
+											handleNavigation(item.path, true);
+										} else {
 											handleNavigation(item.path);
 										}
 									}}
-									href={item.path.endsWith(".png") ? item.path : undefined}
-									target={item.path.endsWith(".png") ? "_blank" : undefined}
-									rel={
-										item.path.endsWith(".png")
-											? "noopener noreferrer"
-											: undefined
-									}
+									href={item.openInNewTab ? item.path : undefined}
+									target={item.openInNewTab ? "_blank" : undefined}
+									rel={item.openInNewTab ? "noopener noreferrer" : undefined}
 									aria-label={item.name}
 									style={{ cursor: "pointer" }}
 								>
