@@ -1,6 +1,16 @@
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingRight: 0,
+          paddingLeft: 0,
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       main: '#A70003', // Example primary color

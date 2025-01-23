@@ -6,7 +6,7 @@ export default function HeroSection() {
 			sx={{
 				position: "relative",
 				width: "100%",
-				height: "75vh",
+				height: "100vh",
 				backgroundImage: `url('/pastaHero.jpg')`,
 				backgroundSize: "cover",
 				backgroundPosition: "center",
@@ -30,6 +30,10 @@ export default function HeroSection() {
 			{/* Content */}
 			<Container
 				sx={{
+					paddingLeft: "20px",
+					paddingRight: "20px",
+					paddingTop: "40px", // Example padding
+
 					position: "absolute",
 					top: "50%",
 					left: "0%", // Align content to the left
