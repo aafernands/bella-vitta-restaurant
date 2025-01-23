@@ -1,0 +1,105 @@
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	/* background-color: rgb(236, 236, 236) */
+  }
+  
+  .heroSection {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 40%;
+	padding: 1rem 0rem 0rem 1rem;
+  }
+  
+  .heroDescription strong {
+	color: var(--foreground);
+	font-weight: bold;
+  }
+  
+  .logo {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #fff;
+  }
+  
+  .rightButtons {
+	display: flex;
+	gap: 1rem;
+  }
+  
+  .bookButton {
+	border-color: #fff;
+	color: #fff;
+	text-transform: none;
+	font-size: 1rem !important;
+  }
+  
+  .ctaButton {
+	background: linear-gradient(to right, #ff3131, #006c61);
+	color: #fff;
+	text-transform: none;
+  }
+  
+  .highlight {
+	background: linear-gradient(to right, #ff3131, #fbbd02);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  }
+  
+  .features {
+	padding: 40px;
+  }
+  
+  .featureList {
+	margin-top: 1rem;
+  }
+  
+  .featureItem {
+	margin: 0.5rem 0;
+  }
+  
+  .imageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .heroImage {
+	width: 100%;
+	max-width: 600px;
+	height: auto;
+  }
+  
+  /* Hide the image on small screens */
+  @media (max-width: 768px) {
+	.heroImage {
+	  display: none;
+	}
+  }
+  
+  /* Adjust the layout for small screens */
+  @media (max-width: 600px) {
+	.heroSection {
+	  flex-direction: column;
+	  height: auto;
+	}
+  
+	.heroImage {
+	  max-width: 100%;
+	  height: auto;
+	}
+  
+	.features {
+	  padding: 20px;
+	}
+  
+	.rightButtons {
+	  flex-direction: column;
+	  align-items: center;
+	}
+  }
+  

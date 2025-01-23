@@ -68,17 +68,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <Box>
-          <Button
-            href="tel:9738363080"
-            className={styles.callBtn}
-            variant="contained"
-            color="primary"
-          >
-            Call: 973-836-3080
-          </Button>
-        </Box>
-
         {/* Mobile Menu Icon */}
         <IconButton className={styles.menuIcon} onClick={toggleDrawer}>
           <MenuIcon sx={{ color: "#000000" }} />
