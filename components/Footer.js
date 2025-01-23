@@ -32,7 +32,7 @@ const Footer = () => {
               <Link href="/#about" sx={{ display: 'block', color: 'white', mb: 1 }}>
                 About Us
               </Link>
-              <Link href="/menu.pdf" sx={{ display: 'block', color: 'white', mb: 1 }}>
+              <Link href="/menu.png" target="_blank" sx={{ display: 'block', color: 'white', mb: 1 }}>
                 Menu
               </Link>
               <Link href="/contact" sx={{ display: 'block', color: 'white', mb: 1 }}>
@@ -55,9 +55,6 @@ const Footer = () => {
               </IconButton>
               <IconButton href="https://www.instagram.com" target="_blank" sx={{ color: 'white', mr: 2 }}>
                 <Instagram />
-              </IconButton>
-              <IconButton href="https://www.linkedin.com" target="_blank" sx={{ color: 'white' }}>
-                <LinkedIn />
               </IconButton>
             </Box>
           </Grid>

@@ -81,7 +81,7 @@ export default function HeroSection() {
 					{/* First Button: Reserve a Table */}
 					<Button
 						target="blank"
-						href="https://calendly.com/fndslabs-15min-call/15min"
+						href="/reservation"
 						variant="outlined"
 						aria-label="Reserve a Table"
 						sx={{

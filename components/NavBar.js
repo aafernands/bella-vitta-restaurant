@@ -54,7 +54,7 @@ export default function Navbar() {
 					{[
 						{ name: "Home", path: "/" },
 						{ name: "About", path: "/#about" },
-            { name: "Menu", path: "./menu.png" },
+						{ name: "Menu", path: "./menu.png" },
 						{ name: "Contact", path: "/contact" },
 					].map((item) => (
 						<li key={item.name}>
@@ -87,7 +87,7 @@ export default function Navbar() {
 							<li key={item.name}>
 								<a
 									onClick={() => {
-										if (!item.path.endsWith(".pdf")) {
+										if (!item.path.endsWith(".png")) {
 											handleNavigation(item.path);
 										}
 									}}
