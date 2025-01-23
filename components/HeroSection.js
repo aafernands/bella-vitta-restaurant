@@ -58,6 +58,7 @@ export default function HeroSection() {
 						marginBottom: "80px",
 						fontFamily: "'Ubuntu', sans-serif", // Apply Ubuntu font
 						fontWeight: 700,
+						mt: 5,
 						fontSize: {
 							xs: "2.5rem",
 							sm: "3rem",

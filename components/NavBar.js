@@ -7,8 +7,15 @@ import {
 	IconButton,
 	AppBar,
 	Toolbar,
+	Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faFacebook,
+	faTwitter,
+	faInstagram,
+} from "@fortawesome/free-brands-svg-icons"; // Import FontAwesome icons
 import styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
@@ -21,11 +28,9 @@ export default function Navbar() {
 
 	const handleNavigation = (path, openInNewTab = false) => {
 		if (openInNewTab) {
-			// Open the link in a new tab
 			window.open(path, "_blank", "noopener noreferrer");
 		} else {
-			// Navigate within the app
-			setOpen(false); // Close the drawer if it's open
+			setOpen(false);
 			router.push(path);
 		}
 	};
@@ -34,8 +39,8 @@ export default function Navbar() {
 		<AppBar position="fixed" className={styles.appbar}>
 			<Toolbar
 				sx={{
-					backgroundColor: "white", // Fixed background color
-					color: "#000000", // Fixed text color
+					backgroundColor: "white",
+					color: "#000000",
 					padding: "20px",
 					textAlign: "center",
 				}}
@@ -48,7 +53,7 @@ export default function Navbar() {
 						style={{ cursor: "pointer" }}
 					>
 						<img
-							src="../logoWhite.png" // Fixed logo
+							src="../logoWhite.png"
 							alt="FNDS Labs Logo"
 							className={styles.logoImage}
 						/>
@@ -65,9 +70,7 @@ export default function Navbar() {
 					].map((item) => (
 						<li key={item.name}>
 							<a
-								onClick={() =>
-									handleNavigation(item.path, item.openInNewTab)
-								}
+								onClick={() => handleNavigation(item.path, item.openInNewTab)}
 								aria-label={item.name}
 								style={{ cursor: "pointer" }}
 							>
@@ -76,6 +79,7 @@ export default function Navbar() {
 						</li>
 					))}
 				</ul>
+
 				{/* Mobile Menu Icon */}
 				<IconButton className={styles.menuIcon} onClick={toggleDrawer}>
 					<MenuIcon sx={{ color: "#000000" }} />
@@ -112,6 +116,32 @@ export default function Navbar() {
 							</li>
 						))}
 					</ul>
+					{/* Reservation Button */}
+					<Button
+						className={styles.reservationBtn}
+						onClick={() => handleNavigation("/reservation")}
+					>
+						Reserve A TABLE
+					</Button>
+
+					{/* Footer Section */}
+					<div className={styles.footer}>
+						<p>123 Paris St, Paris, France</p>
+						<div className={styles.socialLinks}>
+							<Link href="https://www.facebook.com" target="_blank">
+								<FontAwesomeIcon icon={faFacebook} />
+							</Link>
+							<Link href="https://www.twitter.com" target="_blank">
+								<FontAwesomeIcon icon={faTwitter} />
+							</Link>
+							<Link href="https://www.instagram.com" target="_blank">
+								<FontAwesomeIcon icon={faInstagram} />
+							</Link>
+						</div>
+						<p>
+							<a href="tel:+1234567890">+33 1 23 45 67 89</a>
+						</p>
+					</div>
 				</div>
 			</Drawer>
 		</AppBar>
