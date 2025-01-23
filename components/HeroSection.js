@@ -6,11 +6,12 @@ export default function HeroSection() {
 			sx={{
 				position: "relative",
 				width: "100%",
-				height: "75vh", // Full viewport height
-				backgroundImage: `url('/pastaHero.jpg')`, // Background image only
+				height: "75vh",
+				backgroundImage: `url('/pastaHero.jpg')`,
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
+				
 			}}
 		>
 			{/* Black Overlay */}
@@ -21,7 +22,7 @@ export default function HeroSection() {
 					left: 0,
 					width: "100%",
 					height: "100%",
-					backgroundColor: "rgba(0, 0, 0, 0.7)", // Solid black overlay with opacity
+					backgroundColor: "rgba(0, 0, 0, 0.34)", // Solid black overlay with opacity
 					zIndex: 1, // Ensure the overlay is on top of the image
 				}}
 			/>
@@ -31,7 +32,7 @@ export default function HeroSection() {
 				sx={{
 					position: "absolute",
 					top: "50%",
-					left: "5%", // Align content to the left
+					left: "0%", // Align content to the left
 					transform: "translateY(-50%)", // Center vertically
 					color: "white", // Adjust text color for visibility
 					textAlign: "left", // Align text to the left
@@ -97,7 +98,7 @@ export default function HeroSection() {
 						variant="contained"
 						aria-label="Call"
 						sx={{
-							backgroundColor: "#A70003",
+							backgroundColor: "primary",
 							color: "#fff",
 							"&:hover": {
 								backgroundColor: "#A70200",

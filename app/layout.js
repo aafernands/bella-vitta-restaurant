@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
 					<NavBar />
-					<Container sx={{ bgcolor: "white", py: "86px" }}>
+					<Container sx={{  bgcolor: "red", paddingTop: "60px" }}>
 						{/* #f5f5f5 */}
-						{children}
+						{children} 
 					</Container>{" "}
 				</ThemeProvider>
 			</body>
