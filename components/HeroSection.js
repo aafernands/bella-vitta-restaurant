@@ -32,8 +32,6 @@ export default function HeroSection() {
 				sx={{
 					paddingLeft: "20px",
 					paddingRight: "20px",
-					paddingTop: "40px", // Example padding
-
 					position: "absolute",
 					top: "50%",
 					left: "0%", // Align content to the left
@@ -57,6 +55,7 @@ export default function HeroSection() {
 					variant="h2"
 					color="inherit"
 					sx={{
+						marginBottom: "80px",
 						fontFamily: "'Ubuntu', sans-serif", // Apply Ubuntu font
 						fontWeight: 700,
 						fontSize: {

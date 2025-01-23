@@ -53,7 +53,7 @@ export default function Navbar() {
         <ul className={styles.navLinks}>
           {[
             { name: "Home", path: "/" },
-            { name: "About", path: "/about" },
+            { name: "About", path: "/#about" },
             { name: "Menu", path: "/menu" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (
@@ -80,7 +80,7 @@ export default function Navbar() {
           <ul>
             {[
               { name: "Home", path: "/" },
-              { name: "About", path: "/about" },
+              { name: "About", path: "/#about" },
               { name: "Menu", path: "/menu" },
               { name: "Contact", path: "/contact" },
             ].map((item) => (
