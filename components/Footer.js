@@ -15,9 +15,7 @@ const Footer = () => {
             <Typography variant="body2" sx={{ mb: 1 }}>
               Your home for authentic Italian flavors. Serving fresh, homemade pasta, wood-fired pizzas, and more!
             </Typography>
-            <Typography variant="body2">
-              © {new Date().getFullYear()} Bella Vita Ristorante. All rights reserved.
-            </Typography>
+            
           </Grid>
 
           {/* Column 2: Links */}
@@ -59,6 +57,12 @@ const Footer = () => {
             </Box>
           </Grid>
         </Grid>
+        <Box sx={{mt: 2}}>
+          <Typography variant="body2">
+              © {new Date().getFullYear()} Bella Vita Ristorante. All rights reserved.
+            </Typography>
+        </Box>
+        
       </Container>
     </Box>
   );

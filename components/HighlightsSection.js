@@ -1,7 +1,16 @@
+"use client";
+
 import React from 'react';
 import { Box, Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+import { useInView } from 'react-intersection-observer';
 
 export default function HighlightsSection() {
+
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger only once when the element comes into view
+    threshold: 0.1, // Trigger when 10% of the element is visible
+  });
+
   const highlights = [
     {
       title: 'Pursuit of Perfection',
@@ -58,10 +67,13 @@ export default function HighlightsSection() {
         {highlights.map((highlight, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card
+              ref={ref} // Add ref here to trigger lazy loading for each card
               sx={{
                 maxWidth: 345,
                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
                 borderRadius: '8px',
+                opacity: inView ? 1 : 0, // Optionally add fade-in effect
+                transition: 'opacity 0.3s ease',
               }}
             >
               <CardMedia
