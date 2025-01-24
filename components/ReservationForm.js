@@ -177,7 +177,7 @@ const ReservationForm = () => {
 
           <Grid item xs={12} md={6}>
             <Typography variant="h6" sx={{ textAlign: "left", mb: 2 }}>
-              Find Us Here:
+            Find Us Here:
             </Typography>
             <Box sx={{ width: "100%", height: "300px" }}>
               <iframe
