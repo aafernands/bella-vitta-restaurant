@@ -1,10 +1,6 @@
-Here’s the README formatted as `README.md` code:
-
-```markdown
 # Bella Vita Ristorante 🍝  
 **A Next.js-based website for Bella Vita Ristorante, showcasing authentic Italian cuisine and a warm dining experience.**
 
----
 
 ## Table of Contents  
 - [About the Project](#about-the-project)  
@@ -17,22 +13,16 @@ Here’s the README formatted as `README.md` code:
 - [License](#license)  
 - [Contact](#contact)  
 
----
 
 ## About the Project  
 Bella Vita Ristorante is a fully responsive and dynamic website designed to highlight the charm of authentic Italian cuisine. It features an intuitive layout with dedicated sections for the restaurant's menu, story, contact information, and more.  
-
----
-
 ## Features  
 - **Interactive Navigation:** Smooth scrolling and intuitive navigation.  
 - **Dynamic Content:** Dedicated sections for the menu, about, and reservations.  
 - **Material UI Integration:** Beautiful and consistent UI components.  
 - **Responsive Design:** Optimized for both desktop and mobile devices.  
 - **Contact Form:** Functional contact form with real-time validation.  
-- **Map Integration:** Visual representation of the restaurant's location.  
-
----
+- **Map Integration:** Visual representation of the restaurant's location.
 
 ## Tech Stack  
 - **Framework:** [Next.js](https://nextjs.org/)  
@@ -41,29 +31,34 @@ Bella Vita Ristorante is a fully responsive and dynamic website designed to high
 - **Icons:** Material UI Icons  
 - **Deployment:** [Vercel](https://vercel.com/)  
 
----
-
 ## Installation  
-Follow these steps to set up the project locally:  
 
-1. **Clone the repository:**  
-   ```bash  
-   git clone https://github.com/aafernands/bella-vita.git  
-   cd bella-vita  
-   ```  
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/aafernands/bella-vita.git
 
-2. **Install dependencies:**  
-   ```bash  
-   npm install  
-   ```  
+   cd bella-vita
+   ```
 
-3. **Start the development server:**  
-   ```bash  
-   npm run dev  
-   ```  
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-4. **Open the app in your browser:**  
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the app.  
+3. Install `react-intersection-observer`:
+   ```bash
+   npm install react-intersection-observer
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open the app in your browser at 
+   ```bash
+   http://localhost:3000
+   ```
 
 ---
 
@@ -78,18 +73,22 @@ Follow these steps to set up the project locally:
 ## Screenshots  
 
  - **Homepage:**
+
 ![Homepage Screenshot](./public/homepage.png)
 
 
  - **Reservation Page:**
+
 ![Reservation Page Screenshot](./public/reservation.png)
 
 
  - **Contact Page:**
+
 ![Contact Page Screenshot](./public/contact.png)
 
 
  - **Highlights Section:**
+
 ![Highlights Section Screenshot](./public/highlights.png)
 
 
@@ -114,18 +113,15 @@ Contributions are welcome! Follow these steps to contribute:
    ```  
 5. **Open a pull request.**  
 
----
 
 ## License
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.  
-
----
+ 
 
 ## Contact  
 - **Author:** Alex Fernandes  
 - **Email:** alexfernands@outlook.com  
 - **GitHub:** [aafernands](https://github.com/aafernands)  
 - **Portfolio:** [aafernands.github.io](https://aafernands.github.io)  
-```
