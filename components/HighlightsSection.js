@@ -3,7 +3,8 @@
 import React from 'react';
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
-import Grid from '@mui/material/Grid2';
+
+import Grid from '@mui/material/Grid';
 
 export default function HighlightsSection() {
   const highlights = [
@@ -55,7 +56,6 @@ export default function HighlightsSection() {
           fontFamily: 'Katibeh, cursive',
           color: '#A70003',
           fontWeight: 400,
-          mb: 4,
           fontSize: "30px",
         }}
       >
@@ -70,7 +70,7 @@ export default function HighlightsSection() {
           });
 
           return (
-            <Grid xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <Card
                 ref={ref} // Add unique ref here
                 sx={{

@@ -7,11 +7,11 @@ import {
 	IconButton,
 } from "@mui/material";
 import Grid from '@mui/material/Grid2';
-import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
+import { Facebook, Twitter, Instagram } from "@mui/icons-material";
 
 const Footer = () => {
 	return (
-		<Box sx={{ backgroundColor: "#1A202C", color: "white", py: 6 }}>
+		<Box sx={{ backgroundColor: "#1A202C", padding: "20px", color: "white", py: 6 }}>
 			<Container maxWidth="lg">
 				<Grid container spacing={4}>
 					<Grid item xs={12} md={4}>
@@ -81,7 +81,7 @@ const Footer = () => {
 						</Box>
 					</Grid>
 				</Grid>
-				<Box sx={{ mt: 2 }}>
+				<Box sx={{  mt: 2 }}>
 					<Typography variant="body2" align="center">
 						© {new Date().getFullYear()} Bella Vita Ristorante. All rights
 						reserved.
