@@ -25,7 +25,7 @@ export default function AboutSection() {
 			<Typography
 				variant="h4"
 				sx={{
-					fontFamily: "'Monteserrat', cursive",
+					fontFamily: "'Dancing Script', cursive",
 					color: "#A70003",
 					fontWeight: 400,
 					mb: 4,
