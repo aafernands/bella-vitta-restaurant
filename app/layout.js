@@ -6,6 +6,8 @@ import { Container, ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../themes"; // Adjust the path if needed
 
 export default function RootLayout({ children }) {
+  console.log('Environment Variable:', process.env.NEXT_PUBLIC_GOOGLE_API_KEY);
+
   return (
     <html lang="en">
       <body>
