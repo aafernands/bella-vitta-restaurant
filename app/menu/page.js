@@ -1,4 +1,5 @@
-import { Typography, Grid, Card, CardContent } from '@mui/material';
+import { Typography, Card, CardContent } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 const menuItems = [
   { name: 'Spaghetti Carbonara', price: '$15' },

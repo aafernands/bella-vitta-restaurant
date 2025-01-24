@@ -12,7 +12,6 @@ export default function AboutSection() {
 				boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
 			}}
 		>
-			{/* Welcome Heading */}
 			<Typography
 				variant="h6"
 				sx={{
@@ -23,8 +22,6 @@ export default function AboutSection() {
 			>
 				Welcome to Bella Vita Ristorante
 			</Typography>
-
-			{/* Subtitle */}
 			<Typography
 				variant="h4"
 				sx={{
@@ -37,8 +34,6 @@ export default function AboutSection() {
 			>
 				Your Home for Authentic Italian Flavors!
 			</Typography>
-
-			{/* About Text */}
 			<Typography
 				variant="body1"
 				sx={{
@@ -54,7 +49,6 @@ export default function AboutSection() {
 				crafting homemade pastas, wood-fired pizzas, and classic Italian dishes
 				that honor our culinary heritage.
 			</Typography>
-
 			<Typography
 				variant="body1"
 				sx={{

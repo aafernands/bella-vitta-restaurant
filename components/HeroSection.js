@@ -14,7 +14,6 @@ export default function HeroSection() {
 				
 			}}
 		>
-			{/* Black Overlay */}
 			<Box
 				sx={{
 					position: "absolute",
@@ -22,23 +21,22 @@ export default function HeroSection() {
 					left: 0,
 					width: "100%",
 					height: "100%",
-					backgroundColor: "rgba(0, 0, 0, 0.34)", // Solid black overlay with opacity
-					zIndex: 1, // Ensure the overlay is on top of the image
+					backgroundColor: "rgba(0, 0, 0, 0.34)", 
+					zIndex: 1, 
 				}}
 			/>
 
-			{/* Content */}
 			<Container
 				sx={{
 					paddingLeft: "20px",
 					paddingRight: "20px",
 					position: "absolute",
 					top: "50%",
-					left: "0%", // Align content to the left
-					transform: "translateY(-50%)", // Center vertically
-					color: "white", // Adjust text color for visibility
-					textAlign: "left", // Align text to the left
-					zIndex: 2, // Ensure content is above the overlay
+					left: "0%",
+					transform: "translateY(-50%)",
+					color: "white", 
+					textAlign: "left", 
+					zIndex: 2,
 				}}
 			>
 				<Typography
@@ -56,7 +54,7 @@ export default function HeroSection() {
 					color="inherit"
 					sx={{
 						marginBottom: "80px",
-						fontFamily: "'Ubuntu', sans-serif", // Apply Ubuntu font
+						fontFamily: "'Ubuntu', sans-serif",
 						fontWeight: 700,
 						mt: 5,
 						fontSize: {
@@ -69,17 +67,14 @@ export default function HeroSection() {
 				>
 					Experience the taste of Italy, Right in Your Neighborhood.
 				</Typography>
-
-				{/* Buttons */}
 				<Box
 					sx={{
-						display: "flex", // Flex layout for side-by-side buttons
-						flexDirection: "row", // Horizontal layout
-						gap: 1, // Space between buttons
-						mt: 4, // Space between text and buttons
+						display: "flex",
+						flexDirection: "row",
+						gap: 1,
+						mt: 4,
 					}}
 				>
-					{/* First Button: Reserve a Table */}
 					<Button
 						target="blank"
 						href="/reservation"
@@ -95,8 +90,6 @@ export default function HeroSection() {
 					>
 						RESERVE A TABLE
 					</Button>
-
-					{/* Second Button: Call */}
 					<Button
 						href="tel:5328885455"
 						variant="contained"
@@ -109,7 +102,7 @@ export default function HeroSection() {
 							},
 						}}
 					>
-						Call: 532-888-5455
+						Call: 123-456-7890
 					</Button>
 				</Box>
 			</Container>

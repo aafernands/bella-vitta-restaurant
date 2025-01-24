@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import {
 	Box,
 	Container,
-	Grid,
 	Typography,
 	TextField,
 	Button,
 	Paper,
 } from "@mui/material";
 import { Email, Phone, LocationOn } from "@mui/icons-material";
+import Grid from '@mui/material/Grid2';
 
 const Contact = () => {
 	const [formData, setFormData] = useState({

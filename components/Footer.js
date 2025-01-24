@@ -2,11 +2,11 @@ import React from "react";
 import {
 	Box,
 	Container,
-	Grid,
 	Typography,
 	Link,
 	IconButton,
 } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 
 const Footer = () => {
@@ -14,7 +14,6 @@ const Footer = () => {
 		<Box sx={{ backgroundColor: "#1A202C", color: "white", py: 6 }}>
 			<Container maxWidth="lg">
 				<Grid container spacing={4}>
-					{/* Column 1: Company Info */}
 					<Grid item xs={12} md={4}>
 						<Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
 							Bella Vita Ristorante
@@ -24,8 +23,6 @@ const Footer = () => {
 							pasta, wood-fired pizzas, and more!
 						</Typography>
 					</Grid>
-
-					{/* Column 2: Links */}
 					<Grid item xs={12} md={4}>
 						<Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
 							Quick Links
@@ -55,8 +52,6 @@ const Footer = () => {
 							</Link>
 						</Box>
 					</Grid>
-
-					{/* Column 3: Social Media */}
 					<Grid item xs={12} md={4}>
 						<Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
 							Follow Us

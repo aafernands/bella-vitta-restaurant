@@ -1,8 +1,9 @@
 "use client";
 
 import React from 'react';
-import { Box, Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+import Grid from '@mui/material/Grid2';
 
 export default function HighlightsSection() {
   const highlights = [
@@ -54,9 +55,8 @@ export default function HighlightsSection() {
           fontFamily: 'Katibeh, cursive',
           color: '#A70003',
           fontWeight: 400,
-					mb: 4,
-					fontSize: "30px"
-
+          mb: 4,
+          fontSize: "30px",
         }}
       >
         Highlights of Bella Vita
@@ -70,7 +70,7 @@ export default function HighlightsSection() {
           });
 
           return (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid xs={12} sm={6} md={4} key={index}>
               <Card
                 ref={ref} // Add unique ref here
                 sx={{

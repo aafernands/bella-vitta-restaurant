@@ -6,13 +6,13 @@ import {
   Button,
   Box,
   Container,
-  Grid,
   Typography,
   Paper,
   Snackbar,
   Alert,
   Divider,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 const ReservationForm = () => {
   const [formData, setFormData] = useState({

@@ -1,5 +1,5 @@
-# Bella Vita Ristorante 🍝  
-**A Next.js-based website for Bella Vita Ristorante, showcasing authentic Italian cuisine and a warm dining experience.**
+# Bella Vita Restaurant 🍝  
+**A Next.js-based website for Bella Vita Restaurant, showcasing authentic Italian cuisine and a warm dining experience.**
 
 
 ## Table of Contents  
@@ -15,7 +15,7 @@
 
 
 ## About the Project  
-Bella Vita Ristorante is a fully responsive and dynamic website designed to highlight the charm of authentic Italian cuisine. It features an intuitive layout with dedicated sections for the restaurant's menu, story, contact information, and more.  
+Bella Vita Restaurant is a fully responsive and dynamic website designed to highlight the charm of authentic Italian cuisine. It features an intuitive layout with dedicated sections for the restaurant's menu, story, contact information, and more.  
 ## Features  
 - **Interactive Navigation:** Smooth scrolling and intuitive navigation.  
 - **Dynamic Content:** Dedicated sections for the menu, about, and reservations.  
@@ -63,7 +63,7 @@ Bella Vita Ristorante is a fully responsive and dynamic website designed to high
 ---
 
 ## Usage  
-- **Homepage:** Explore the story, menu, and services of Bella Vita Ristorante.  
+- **Homepage:** Explore the story, menu, and services of Bella Vita Restaurant.  
 - **Contact Page:** Send inquiries through the integrated contact form.  
 - **Menu Section:** Browse curated Italian dishes and offerings.  
 - **Reservation Section:** Placeholder for future integration with reservation systems.  
