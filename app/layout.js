@@ -11,10 +11,11 @@ export default function RootLayout({ children }) {
 			<body>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
-					<NavBar />
-					<Container>{children}</Container>
+					<Container>
+						<NavBar />
+						{children} <Footer />
+					</Container>
 				</ThemeProvider>{" "}
-				<Footer />
 			</body>
 		</html>
 	);

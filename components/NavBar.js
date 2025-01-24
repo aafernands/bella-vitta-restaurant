@@ -10,12 +10,9 @@ import {
 	Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faFacebook,
-	faTwitter,
-	faInstagram,
-} from "@fortawesome/free-brands-svg-icons"; // Import FontAwesome icons
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
@@ -129,13 +126,34 @@ export default function Navbar() {
 						<p>123 Paris St, Paris, France</p>
 						<div className={styles.socialLinks}>
 							<Link href="https://www.facebook.com" target="_blank">
-								<FontAwesomeIcon icon={faFacebook} />
+								<FacebookIcon
+									sx={{
+										color: "black",
+										"&:hover": {
+											color: "#A70003",
+										},
+									}}
+								/>
 							</Link>
 							<Link href="https://www.twitter.com" target="_blank">
-								<FontAwesomeIcon icon={faTwitter} />
+								<TwitterIcon
+									sx={{
+										color: "black",
+										"&:hover": {
+											color: "#A70003",
+										},
+									}}
+								/>
 							</Link>
 							<Link href="https://www.instagram.com" target="_blank">
-								<FontAwesomeIcon icon={faInstagram} />
+								<InstagramIcon
+									sx={{
+										color: "black",
+										"&:hover": {
+											color: "#A70003",
+										},
+									}}
+								/>
 							</Link>
 						</div>
 						<p>
