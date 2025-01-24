@@ -179,8 +179,8 @@ const ReservationForm = () => {
             </Typography>
             <Box sx={{ width: '100%', height: '300px' }}>
               <iframe
-                src="https://www.google.com/maps/embed/v1/place?q=37+Boulevard+du+Montparnasse,+75006+Paris,+France&key=AIzaSyDn6MCMWAR3ASwPWaXHW2g-liixrU5BPwA"
-                width="100%"
+    src={`https://www.google.com/maps/embed/v1/place?q=37+Boulevard+du+Montparnasse,+75006+Paris,+France&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+    width="100%"
                 height="100%"
                 style={{ border: '0', borderRadius: '8px' }}
                 allowFullScreen=""
