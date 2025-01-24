@@ -1,8 +1,18 @@
 "use client";
 
 import React, { useState } from 'react';
-import { TextField, Button, Box, Container, Grid, Typography, Paper, Snackbar, Alert, Divider } from '@mui/material';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import {
+  TextField,
+  Button,
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Paper,
+  Snackbar,
+  Alert,
+  Divider,
+} from '@mui/material';
 
 const ReservationForm = () => {
   const [formData, setFormData] = useState({
@@ -27,11 +37,11 @@ const ReservationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simple form validation
     const validationErrors = {};
     if (!formData.name) validationErrors.name = 'Name is required';
     if (!formData.email) validationErrors.email = 'Email is required';
-    if (!formData.people || formData.people <= 0) validationErrors.people = 'Please enter a valid number of people';
+    if (!formData.people || formData.people <= 0)
+      validationErrors.people = 'Please enter a valid number of people';
     if (!formData.date) validationErrors.date = 'Date is required';
     if (!formData.time) validationErrors.time = 'Time is required';
 
@@ -40,7 +50,7 @@ const ReservationForm = () => {
       return;
     }
 
-    console.log('Form Data:', formData); // Log form data to check
+    console.log('Form Data:', formData);
 
     try {
       const response = await fetch('/api/reserve', {
@@ -68,43 +78,12 @@ const ReservationForm = () => {
     }
   };
 
-  const timeSlots = [
-    '12:00 PM',
-    '1:00 PM',
-    '2:00 PM',
-    '3:00 PM',
-    '4:00 PM',
-    '5:00 PM',
-  ];
-
-  const businessHours = [
-    { day: 'Monday', hours: '10:00 AM - 6:00 PM' },
-    { day: 'Tuesday', hours: '10:00 AM - 6:00 PM' },
-    { day: 'Wednesday', hours: '10:00 AM - 6:00 PM' },
-    { day: 'Thursday', hours: '10:00 AM - 6:00 PM' },
-    { day: 'Friday', hours: '10:00 AM - 8:00 PM' },
-    { day: 'Saturday', hours: '11:00 AM - 8:00 PM' },
-    { day: 'Sunday', hours: 'Closed' },
-  ];
-
-  const mapContainerStyle = {
-    width: '100%',
-    height: '300px',
-    borderRadius: '8px',
-    marginTop: '20px',
-  };
-
-  const center = {
-    lat: 40.7128, // Example latitude (New York)
-    lng: -74.0060, // Example longitude (New York)
-  };
-
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5", py: 6, px: 3 }}>
+    <Box sx={{ backgroundColor: '#f5f5f5', marginTop: "60px", py: 6, px: 3 }}>
       <Container maxWidth="lg">
         <Typography
-          variant="h4"
-          sx={{ textAlign: "center", mb: 4, fontWeight: "bold" }}
+          variant="h5"
+          sx={{ textAlign: 'left', mb: 4, fontWeight: 'bold' }}
         >
           Make a Reservation
         </Typography>
@@ -134,7 +113,6 @@ const ReservationForm = () => {
                   variant="outlined"
                   fullWidth
                   name="email"
-                  type="email"
                   value={formData.email}
                   onChange={handleChange}
                   sx={{ mb: 2 }}
@@ -144,105 +122,88 @@ const ReservationForm = () => {
                 />
                 <TextField
                   label="Number of People"
+                  type="number"
                   variant="outlined"
                   fullWidth
                   name="people"
-                  type="number"
                   value={formData.people}
                   onChange={handleChange}
                   sx={{ mb: 2 }}
                   required
-                  inputProps={{ min: 1 }}
                   error={!!errors.people}
                   helperText={errors.people}
                 />
                 <TextField
                   label="Date"
+                  type="date"
                   variant="outlined"
                   fullWidth
                   name="date"
-                  type="date"
                   value={formData.date}
                   onChange={handleChange}
                   sx={{ mb: 2 }}
+                  InputLabelProps={{ shrink: true }}
                   required
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
                   error={!!errors.date}
                   helperText={errors.date}
                 />
                 <TextField
-                  select
                   label="Time"
+                  type="time"
                   variant="outlined"
                   fullWidth
                   name="time"
                   value={formData.time}
                   onChange={handleChange}
                   sx={{ mb: 2 }}
+                  InputLabelProps={{ shrink: true }}
                   required
-                  SelectProps={{
-                    native: true,
-                  }}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
                   error={!!errors.time}
                   helperText={errors.time}
-                >
-                  <option value="">Select a time</option>
-                  {timeSlots.map((time, index) => (
-                    <option key={index} value={time}>
-                      {time}
-                    </option>
-                  ))}
-                </TextField>
-
+                />
                 <Button
                   type="submit"
                   variant="contained"
                   color="primary"
                   fullWidth
-                  sx={{ mt: 2 }}
                 >
-                  Reserve
+                  Submit
                 </Button>
               </form>
             </Paper>
           </Grid>
 
-          {/* Business Hours Section */}
           <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 3 }} elevation={3}>
-              <Typography variant="h6" sx={{ mb: 2 }}>
-                Business Hours
-              </Typography>
-              {businessHours.map((hour, index) => (
-                <Typography key={index} sx={{ mb: 1 }}>
-                  <strong>{hour.day}:</strong> {hour.hours}
-                </Typography>
-              ))}
-            </Paper>
-          </Grid>
-
-          {/* Map Section */}
-          <Grid item xs={12}>
-            <Typography variant="h6" sx={{ mb: 2, textAlign: "center" }}>
+            <Typography variant="h6" sx={{ textAlign:"left", mb: 2 }}>
               Find Us Here
             </Typography>
-            <LoadScript googleMapsApiKey="AIzaSyDn6MCMWAR3ASwPWaXHW2g-liixrU5BPwA">
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={center}
-                zoom={12}
-              >
-                <Marker position={center} />
-              </GoogleMap>
-            </LoadScript>
+            <Box sx={{ width: '100%', height: '300px' }}>
+              <iframe
+                src="https://www.google.com/maps/embed/v1/place?q=37+Boulevard+du+Montparnasse,+75006+Paris,+France&key=AIzaSyDn6MCMWAR3ASwPWaXHW2g-liixrU5BPwA"
+                width="100%"
+                height="100%"
+                style={{ border: '0', borderRadius: '8px' }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </Box>
           </Grid>
         </Grid>
       </Container>
+
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={() => setOpenSnackbar(false)}
+      >
+        <Alert
+          onClose={() => setOpenSnackbar(false)}
+          severity="success"
+          sx={{ width: '100%' }}
+        >
+          Reservation successful!
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
