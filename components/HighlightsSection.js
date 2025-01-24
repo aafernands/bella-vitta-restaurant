@@ -53,7 +53,7 @@ export default function HighlightsSection() {
         sx={{
           textAlign: 'center',
           mb: 4,
-          fontFamily: 'Katibeh, cursive',
+					fontFamily: "'Dancing Script', cursive",
           color: '#A70003',
           fontWeight: 400,
           fontSize: "30px",
