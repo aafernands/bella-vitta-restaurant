@@ -74,7 +74,8 @@ export default function HighlightsSection() {
                   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
                   borderRadius: '8px',
                   opacity: inView ? 1 : 0, // Optionally add fade-in effect
-                  transition: 'opacity 0.3s ease',
+                  transform: inView ? 'translateY(0)' : 'translateY(20px)', // Slight upward movement
+                  transition: 'opacity 0.6s ease, transform 0.6s ease', // Smooth transition for both opacity and transform
                 }}
               >
                 <CardMedia
