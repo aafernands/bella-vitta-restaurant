@@ -53,6 +53,10 @@ export default function HighlightsSection() {
           mb: 4,
           fontFamily: 'Katibeh, cursive',
           color: '#A70003',
+          fontWeight: 400,
+					mb: 4,
+					fontSize: "30px"
+
         }}
       >
         Highlights of Bella Vita

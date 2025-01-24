@@ -30,7 +30,9 @@ export default function AboutSection() {
 				sx={{
 					fontFamily: "'Monteserrat', cursive",
 					color: "#A70003",
+					fontWeight: 400,
 					mb: 4,
+					fontSize: "30px"
 				}}
 			>
 				Your Home for Authentic Italian Flavors!
