@@ -77,8 +77,7 @@ const ReservationForm = () => {
       alert("An error occurred while making the reservation.");
     }
 
-    console.log('API Key:', process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-
+    console.log("API Key:", process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
   };
 
   return (
@@ -182,16 +181,14 @@ const ReservationForm = () => {
             </Typography>
             <Box sx={{ width: "100%", height: "300px" }}>
               <iframe
-                src={`https://www.google.com/maps/embed/v1/place?q=37+Boulevard+du+Montparnasse,+75006+Paris,+France&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+                src={`https://www.google.com/maps/embed/v1/place?q=37+Boulevard+du+Montparnasse,+75006+Paris,+France&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`}
                 width="100%"
                 height="100%"
                 style={{ border: "0", borderRadius: "8px" }}
                 allowFullScreen=""
                 loading="lazy"
-                
               ></iframe>
             </Box>
-            
           </Grid>
         </Grid>
       </Container>
