@@ -10,18 +10,16 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body>
+				<SEO
+					title="Bella Vita Ristorante"
+					description="Experience authentic Italian cuisine at Bella Vita Ristorante."
+					keywords="Italian food, restaurant, authentic Italian, pasta, pizza, fine dining"
+					author="Alex Fernandes"
+				/>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
 					<NavBar />
-					<Container>
-						<SEO
-							title="Bella Vita Ristorante"
-							description="Experience authentic Italian cuisine at Bella Vita Ristorante."
-							keywords="Italian food, restaurant, authentic Italian, pasta, pizza, fine dining"
-							author="Alex Fernandes"
-						/>
-						{children}
-					</Container>
+					<Container>{children}</Container>
 					<Footer />
 				</ThemeProvider>{" "}
 			</body>
