@@ -1,6 +1,5 @@
-// SEO.js
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
 const SEO = ({ title, description, keywords, author }) => (
   <Head>
