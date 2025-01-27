@@ -1,4 +1,7 @@
 // app/layout.js
+
+"use client";
+
 import React from 'react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { Container } from '@mui/system';
