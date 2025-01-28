@@ -5,30 +5,28 @@ import HighlightsSection from "../components/HighlightsSection.js";
 /** @type {import("next").Metadata} */
 
 export const metadata = {
-	title: "Your Website Title",
-	description: "A brief description of your website.",
-	openGraph: {
-		title: "Your Website Title",
-		description: "A brief description of your website.",
-		url: "https://www.yourwebsite.com",
-		siteName: "Your Website",
-		images: [
-			{
-				url: "https://www.yourwebsite.com/og-image.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Open Graph Image",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Your Website Title",
-		description: "A brief description of your website.",
-		images: ["https://www.yourwebsite.com/twitter-image.jpg"],
-	},
+  title: 'Bella Vita Ristorante',
+  description: 'Experience authentic Italian cuisine at Bella Vita Ristorante.',
+  openGraph: {
+    title: 'Bella Vita Ristorante',
+    description: 'Authentic Italian dining experience at Bella Vita Ristorante.',
+    url: 'https://www.yourwebsite.com', // Replace with your actual URL
+    images: [
+      {
+        url: 'https://www.yourwebsite.com/images/og-image.jpg', // Replace with your image URL
+        width: 1200,
+        height: 630,
+        alt: 'Bella Vita Ristorante Open Graph Image',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bella Vita Ristorante',
+    description: 'Enjoy the best Italian food at Bella Vita Ristorante.',
+    images: ['https://www.yourwebsite.com/images/twitter-image.jpg'], // Replace with your image URL
+  },
 };
 
 export default function Home() {
