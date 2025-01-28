@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { Email, Phone, LocationOn } from "@mui/icons-material";
 import Grid from "@mui/material/Grid2";
-import Head from "next/head";
+import SEO from "../../components/SEO.js";
 
 export default function Contact() {
 	const [formData, setFormData] = useState({
@@ -43,33 +43,7 @@ export default function Contact() {
 
 	return (
 		<>
-			<Head>
-				<title>Contact Us - Your Website Name</title>
-				<meta
-					name="description"
-					content="Get in touch with us. Fill out the form or contact us directly via phone or email."
-				/>
-				<meta
-					name="keywords"
-					content="contact, email, phone, support, inquiries"
-				/>
-				<meta property="og:title" content="Contact Us - Your Website Name" />
-				<meta
-					property="og:description"
-					content="Contact us for inquiries, support, or feedback. We are here to help!"
-				/>
-				<meta property="og:url" content="https://www.yourwebsite.com/contact" />
-				<meta property="og:type" content="website" />
-				<meta property="og:image" content="URL_to_image" />
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:title" content="Contact Us - Your Website Name" />
-				<meta
-					name="twitter:description"
-					content="Reach out to us for support, inquiries, or feedback."
-				/>
-				<meta name="twitter:image" content="URL_to_image" />
-			</Head>
-
+			<SEO />
 			<Box sx={{ backgroundColor: "#f5f5f5", marginTop: "60px", py: 6, px: 3 }}>
 				<Container maxWidth="lg">
 					<Typography
