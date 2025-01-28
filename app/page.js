@@ -33,10 +33,49 @@ export const metadata = {
 
 export default function Home() {
 	return (
-		<Container>
-			<HeroSection />
-			<AboutSection />
-			<HighlightsSection />
-		</Container>
+		<>
+			{/* General meta tags */}
+			<title>{metadata.title}</title>
+			<meta name="description" content={metadata.description} />
+			<meta
+				name="keywords"
+				content="Italian food, restaurant, authentic Italian, pasta, pizza, fine dining"
+			/>
+			<meta name="author" content="Alex Fernandes" />
+
+			{/* Open Graph meta tags */}
+			<meta property="og:title" content={metadata.openGraph.title} />
+			<meta
+				property="og:description"
+				content={metadata.openGraph.description}
+			/>
+			<meta property="og:url" content={metadata.openGraph.url} />
+			<meta property="og:image" content={metadata.openGraph.images[0].url} />
+			<meta
+				property="og:image:width"
+				content={metadata.openGraph.images[0].width}
+			/>
+			<meta
+				property="og:image:height"
+				content={metadata.openGraph.images[0].height}
+			/>
+			<meta
+				property="og:image:alt"
+				content={metadata.openGraph.images[0].alt}
+			/>
+			<meta property="og:type" content={metadata.openGraph.type} />
+
+			{/* Twitter Card meta tags */}
+			<meta name="twitter:card" content={metadata.twitter.card} />
+			<meta name="twitter:title" content={metadata.twitter.title} />
+			<meta name="twitter:description" content={metadata.twitter.description} />
+			<meta name="twitter:image" content={metadata.twitter.images[0]} />
+
+			<Container>
+				<HeroSection />
+				<AboutSection />
+				<HighlightsSection />
+			</Container>
+		</>
 	);
 }
