@@ -13,7 +13,7 @@ import {
 	Divider,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import SEO from "../../components/SEO"; // Import the SEO component
+
 
 const ReservationForm = () => {
 	const [formData, setFormData] = useState({
@@ -83,13 +83,6 @@ const ReservationForm = () => {
 
 	return (
 		<Box sx={{ backgroundColor: "#f5f5f5", marginTop: "60px", py: 6, px: 3 }}>
-			<SEO
-				title="Reservation | Bella Vita Ristorante"
-				description="Reserve a table at Bella Vita Ristorante and experience authentic Italian cuisine. Book your table online for a memorable dining experience."
-				keywords="reservation, book a table, Italian restaurant, authentic Italian food, dining reservation, Bella Vita, restaurant booking, table reservation"
-				author="Alex Fernandes"
-			/>
-
 			<Container maxWidth="lg">
 				<Typography
 					variant="h5"
