@@ -32,6 +32,7 @@ export const metadata = {
 export default function SEO() {
 	return (
 		<>
+		<h1>HI</h1>
 			<Head>
 				<title>Contact Us - Your Website Name</title>
 				<meta

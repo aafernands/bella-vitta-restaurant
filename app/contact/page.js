@@ -11,7 +11,34 @@ import {
 } from "@mui/material";
 import { Email, Phone, LocationOn } from "@mui/icons-material";
 import Grid from "@mui/material/Grid2";
-import SEO from "../../components/SEO.js";
+
+export const metadata = {
+	title: "Contact Us - Your Website Name",
+	description:
+	  "Get in touch with us. Fill out the form or contact us directly via phone or email.",
+	openGraph: {
+	  title: "Contact Us - Your Website Name",
+	  description:
+		"Contact us for inquiries, support, or feedback. We are here to help!",
+	  url: "https://www.yourwebsite.com/contact",
+	  type: "website",
+	  images: [
+		{
+		  url: "https://www.yourwebsite.com/images/contact-og-image.jpg", // Replace with actual URL
+		  width: 1200,
+		  height: 630,
+		  alt: "Contact Us",
+		},
+	  ],
+	},
+	twitter: {
+	  card: "summary_large_image",
+	  title: "Contact Us - Your Website Name",
+	  description: "Reach out to us for support, inquiries, or feedback.",
+	  images: ["https://www.yourwebsite.com/images/contact-twitter-image.jpg"], // Replace with actual URL
+	},
+  };
+  
 
 export default function Contact() {
 	const [formData, setFormData] = useState({
@@ -43,7 +70,6 @@ export default function Contact() {
 
 	return (
 		<>
-			<SEO />
 			<Box sx={{ backgroundColor: "#f5f5f5", marginTop: "60px", py: 6, px: 3 }}>
 				<Container maxWidth="lg">
 					<Typography
